@@ -1,3 +1,8 @@
+/*
+实现图像的重映射，生成波浪形的图像
+Author：qingchen—bi
+Date：2020.3.29
+*/
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
