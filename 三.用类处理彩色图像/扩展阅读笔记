@@ -1,0 +1,10 @@
+static_cast<type_id>(espress）将espress转化为type_id类型
+
+absdiff（）计算两个图像的差距，并输出，第三个参数为输出的差值。
+
+城区距离对于三通道的图像为：将得到的差值进行分割，然后将三个通道的对应差值累加。
+output为输出的差值图像
+std::vector<cv::Mat> images;
+cv::split(output,images);
+// 3个通道相加（这里可能出现饱和的情况）
+output= images[0]+images[1]+images[2];
