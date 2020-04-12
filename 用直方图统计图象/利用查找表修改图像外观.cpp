@@ -1,4 +1,9 @@
-#include <iostream>
+/*
+图像反转和伸展直方图
+Author:qingchen-bi
+Date:2020.4.12
+*/
+#incude <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -88,7 +93,7 @@ public:
         Mat lookup(1,
                    &dim,
                    CV_8U);
-        for(int i=0;i<256;i++){
+        for(int i=0;i<256;i++){//构建查找表
             if(i < imin)lookup.at<uchar>(i)=0;
             else if(i>imax)lookup.at<uchar>(i)=255;
             else {
@@ -98,7 +103,7 @@ public:
             }
         }
         Mat result;
-       result= apppliLookUp(image, lookup);
+       result= apppliLookUp(image, lookup);//应用查找表
        return result;
     }
 };
@@ -113,12 +118,12 @@ int main()
             &dim,
             CV_8U);
     for(int i= 0; i< 256; i++){
-        lut.at<uchar>(i) = 256 - i;
+        lut.at<uchar>(i) = 256 - i;//图像反转
     }
 
     result = h.apppliLookUp(image1, lut);//查找表修改后的图像结果
 
-    result1 = h.stretch(image1, 0.01f);
+    result1 = h.stretch(image1, 0.01f);//查找表修改后的图像结果
 
     Mat hist = h.getHistogram(image1);
     double grayMaxValue = 0;
