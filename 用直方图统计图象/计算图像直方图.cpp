@@ -1,3 +1,8 @@
+/*
+计算一维直方图
+Author：qingchen—bi
+Date：2020.4.12
+*/
 #include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -63,7 +68,7 @@ public:
         return histImg;
     }
 };
-
+/*这里给出了计算彩色图像直方图的方法，但没有完全实现。
 class ColorHistogram
 {
 private:
@@ -149,7 +154,7 @@ public:
 
 
 };
-
+*/
 int main()
 {
     cv::Mat image1 = cv::imread("D:/study/opencvstudy/05/1.jpg");
